@@ -1,0 +1,11 @@
+strong a {
+    color: white;
+}
+
+span {
+    background: white url("images/imiml.png") no-repeat;
+    background-size: contain;
+    width: auto; height: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
