@@ -4,11 +4,11 @@ import datetime
 
 class Career(models.Model):
     title = models.CharField(max_length=50)
+    img = models.ImageField(upload_to='images')
     post = models.CharField(max_length=500)
     career_date = models.DateField('Career_Date')
     pub_date = models.DateTimeField('date published')
-    #votes = models.IntegerField(default=0)
-    
+    #votes = models.IntegerField(default=0) 
     #question = models.ForeignKey(Question, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -2,6 +2,9 @@
 import os
 import sys
 
+id = 'imiml'
+pw = 'h@k!w$1%0^2&5*6'
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
     try:
