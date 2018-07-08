@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
     <link href="{%static 'vendor/font-awesome/css/font-awesome.min.css'%}" rel="stylesheet">
     <link href="{%static 'vendor/devicons/css/devicons.min.css'%}" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="{%static 'vendor/simple-line-icons/css/simple-line-icons.css'%}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{%static 'css/resume.css'%}" rel="stylesheet">
@@ -80,52 +80,25 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
         <div class="my-auto">
           <h2 class="mb-5">Experience</h2>
-
+        {% if content_list %}
+        {% for c in content_list %}
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">Senior Web Developer</h3>
-              <div class="subheading mb-3">Intelitec Solutions</div>
-              <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
+              <h3 class="mb-0">{{c.title}}</h3>
+              <div class="subheading mb-3">IML</div>
+              <img src= "{{c.img.url}}" width=300 style="border-radius:20px;">
+              <p>{{c.post}}</p>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">March 2013 - Present</span>
+              <span class="text-primary">{{c.career_date}}</span>
             </div>
           </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Developer</h3>
-              <div class="subheading mb-3">Intelitec Solutions</div>
-              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">December 2011 - March 2013</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Junior Web Designer</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">July 2010 - December 2011</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Web Design Intern</h3>
-              <div class="subheading mb-3">Shout! Media Productions</div>
-              <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2008 - June 2010</span>
-            </div>
-          </div>
-
+        {% endfor %}
+        {% else %}
+        <h3 class="mb-0">No post are available.</h3>
+        {% endif %}
         </div>
+
 
       </section>
 
@@ -135,24 +108,25 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">University of Colorado Boulder</h3>
+              <h3 class="mb-0">Sejong University</h3>
               <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science - Web Development Track</div>
-              <p>GPA: 3.23</p>
+              <div>Computer Science - Engineering certification</div>
+              <div>worked at SSG, an information security club</div>
+              <div> worked in "Interface", an IT development club</div>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">August 2006 - May 2010</span>
+              <span class="text-primary">March 2016 - March 2022</span>
             </div>
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row">
             <div class="resume-content mr-auto">
-              <h3 class="mb-0">James Buchanan High School</h3>
-              <div class="subheading mb-3">Technology Magnet Program</div>
-              <p>GPA: 3.56</p>
+              <h3 class="mb-0">Manduk High School</h3>
+              <div class="subheading mb-3">science department</div>
+              <div>Established Computer algorithm club</div>
             </div>
             <div class="resume-date text-md-right">
-              <span class="text-primary">August 2002 - May 2006</span>
+              <span class="text-primary">March 2012 - March 2015</span>
             </div>
           </div>
 
@@ -166,37 +140,66 @@
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
           <ul class="list-inline list-icons">
             <li class="list-inline-item">
-              <i class="devicons devicons-html5"></i>
+              <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-c-line-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-css3"></i>
+              <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-cplusplus-line-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-javascript"></i>
+              <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-java-plain-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-jquery"></i>
+             <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+            <i class="devicon-python-plain-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-sass"></i>
+             <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+             <i class="devicon-html5-plain-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-less"></i>
+              <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-android-plain-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap"></i>
+            <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+            <i class="devicon-django-line-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
+              <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-heroku-line-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-grunt"></i>
+             <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+            <i class="devicon-linux-plain"></i>
+            </li>
+            <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+            <i class="devicon-mongodb-plain-wordmark"></i>
+            <li class="list-inline-item">
+              <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-mysql-plain-wordmark"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-gulp"></i>
+             <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-php-plain"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-npm"></i>
+             <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+            <i class="devicon-visualstudio-plain"></i>
+            </li>
+            <li class="list-inline-item">
+              <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+              <i class="devicon-github-plain"></i>
+            </li>
+            <li class="list-inline-item">
+            <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+            <i class="devicon-nginx-plain-wordmark"></i>
+            </li>
+             <li class="list-inline-item">
+           <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+           <i class="devicon-apache-plain-wordmark"></i>
             </li>
           </ul>
 
@@ -204,16 +207,28 @@
           <ul class="fa-ul mb-0">
             <li>
               <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
+                Team project planning</li>
             <li>
               <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
+                Web Crawling</li>
             <li>
               <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
+              Web backend Development <br>&amp; Server construction</li>
+              <li>
+              <i class="fa-li fa fa-check"></i>
+                Network programming</li>
+                <li>
+              <i class="fa-li fa fa-check"></i>
+                Android application development</li>
+                <li>
+              <i class="fa-li fa fa-check"></i>
+                Embedded Development</li>
             <li>
               <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
+              Developed digital forensic tool</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+               Cross Functional Teams</li>
           </ul>
         </div>
       </section>
@@ -221,8 +236,9 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
         <div class="my-auto">
           <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skiier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-          <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technolgy advancements in the front-end web development world.</p>
+          <p>
+          Besides IT, I have a hobby like games and movies. It enjoys indoor activity mainly but enjoys sports such as soccer. Among the sports, I enjoy the football the most, but I can not do well.</p>
+          <p class="mb-0">When forced indoors, My favorite hobby is also a game. I enjoy various games from RPG to FPS. This is because programmers are not as comfortable and close to playing as games.  I usually do my study the most, but if I chose to do a lot then it would probably be a game.</p>
         </div>
       </section>
 
@@ -230,33 +246,16 @@
         <div class="my-auto">
           <h2 class="mb-5">Awards &amp; Certifications</h2>
           <ul class="fa-ul mb-0">
+
             <li>
               <i class="fa-li fa fa-trophy text-warning"></i>
               Google Analytics Certified Developer</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Mobile Web Specialist - Google Certification</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              2<sup>nd</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-            <li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - James Buchanan High School - Hackathon 2006</li>
+              
             <li>
               <i class="fa-li fa fa-trophy text-warning"></i>
               3<sup>rd</sup>
               Place - James Buchanan High School - Hackathon 2005</li>
+
           </ul>
         </div>
       </section>

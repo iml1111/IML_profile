@@ -16,3 +16,8 @@ class Career(models.Model):
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+
+class Award(models.Model):
+	 title = models.CharField(max_length=50)
+	 career_date = models.DateField('Career_Date')
+	 pub_date = models.DateTimeField('date published')
