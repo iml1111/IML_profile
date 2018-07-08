@@ -58,6 +58,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact_me">Contact Me</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -203,11 +206,14 @@
             </li>
           </ul>
 
-          <div class="subheading mb-3">Workflow</div>
+          <div class="subheading mb-3">Interests and positions</div>
           <ul class="fa-ul mb-0">
             <li>
               <i class="fa-li fa fa-check"></i>
                 Team project planning</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+                Computer Algorithm</li>
             <li>
               <i class="fa-li fa fa-check"></i>
                 Web Crawling</li>
@@ -225,10 +231,10 @@
                 Embedded Development</li>
             <li>
               <i class="fa-li fa fa-check"></i>
-              Developed digital forensic tool</li>
+              Digital Forensic</li>
             <li>
               <i class="fa-li fa fa-check"></i>
-               Cross Functional Teams</li>
+               etc.. I like most of the software field!</li>
           </ul>
         </div>
       </section>
@@ -238,7 +244,7 @@
           <h2 class="mb-5">Interests</h2>
           <p>
           Besides IT, I have a hobby like games and movies. It enjoys indoor activity mainly but enjoys sports such as soccer. Among the sports, I enjoy the football the most, but I can not do well.</p>
-          <p class="mb-0">When forced indoors, My favorite hobby is also a game. I enjoy various games from RPG to FPS. This is because programmers are not as comfortable and close to playing as games.  I usually do my study the most, but if I chose to do a lot then it would probably be a game.</p>
+          <p class="mb-0">When forced indoors, My favorite hobby is also a game. I enjoy various games from RPG to FPS. Because programmers can relax and enjoy quickly and easily, there is nothing better than a game.  I usually do my study the most, but If you choose the next, it will be a game.</p>
         </div>
       </section>
 
@@ -246,19 +252,40 @@
         <div class="my-auto">
           <h2 class="mb-5">Awards &amp; Certifications</h2>
           <ul class="fa-ul mb-0">
-
+          {% if award_list %}
+          {% for c in award_list %}
             <li>
               <i class="fa-li fa fa-trophy text-warning"></i>
-              Google Analytics Certified Developer</li>
-              
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              3<sup>rd</sup>
-              Place - James Buchanan High School - Hackathon 2005</li>
-
+              <strong>{{c.title}}</strong>   {{c.career_date}}</li>
+          {% endfor %}
+          {% else %}
+          <p>No post are available.</p>
+          {% endif %}
           </ul>
         </div>
       </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="contact_me">
+        <div class="my-auto">
+          <h2 class="mb-5">Contact Me</h2>
+         <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+                Phone: 010 - 4579 - 3099</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+                Email: <a href="mailto:shin10256@gmail.com">shin10256@gmail.com</a></li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+                Blog: <a href="https://shino1025.blog.me">https://shino1025.blog.me</a></li>
+             <li>
+              <i class="fa-li fa fa-check"></i>
+                Git: <a href="https://github.com/iml1111/">https://github.com/iml1111/</a></li>
+        </ul>
+        </div>
+      </section>
+
+
 
     </div>
 

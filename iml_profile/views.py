@@ -8,10 +8,11 @@ from .models import Award
 def index(request):
 	try:
 		content_list = Career.objects.order_by('-career_date')[:5]
+		award_list =Award.objects.order_by('-career_date')[:5]
 	except Career.DoesNotExist:
 		raise Http404('No Content')
 	return render(request,'iml_profile/index.html',\
-							{'content_list':content_list})
+							{'content_list':content_list,'award_list':award_list})
 
 def career_list(request):
 	try:
