@@ -1,0 +1,40 @@
+*** Starting uWSGI 2.0.17.1 (32bit) on [Wed Jul 18 21:30:59 2018] ***
+compiled with version: 6.3.0 20170516 on 11 July 2018 04:11:09
+os: Linux-4.14.52-v7+ #1123 SMP Wed Jun 27 17:35:49 BST 2018
+nodename: raspberrypi
+machine: armv7l
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/pi/Desktop/IML_profile
+detected binary path: /home/pi/Desktop/IML_profile/bin/uwsgi
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7345
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170124]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x196d378
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 644000 bytes (628 KB) for 10 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x196d378 pid: 3891 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (pid: 3891, cores: 1)
+spawned uWSGI worker 2 (pid: 3896, cores: 1)
+spawned uWSGI worker 3 (pid: 3897, cores: 1)
+spawned uWSGI worker 4 (pid: 3898, cores: 1)
+spawned uWSGI worker 5 (pid: 3899, cores: 1)
+spawned uWSGI worker 6 (pid: 3900, cores: 1)
+spawned uWSGI worker 7 (pid: 3901, cores: 1)
+spawned uWSGI worker 8 (pid: 3902, cores: 1)
+spawned uWSGI worker 9 (pid: 3903, cores: 1)
+spawned uWSGI worker 10 (pid: 3904, cores: 1)
+[pid: 3902|app: 0|req: 1/1] 192.168.35.1 () {42 vars in 731 bytes} [Wed Jul 18 21:31:04 2018] GET / => generated 13283 bytes in 153 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 3891|app: 0|req: 1/2] 192.168.35.1 () {42 vars in 731 bytes} [Wed Jul 18 21:31:05 2018] GET / => generated 13283 bytes in 171 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 3903|app: 0|req: 1/3] 223.62.179.81 () {42 vars in 763 bytes} [Wed Jul 18 21:31:19 2018] GET / => generated 13283 bytes in 154 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 3903|app: 0|req: 2/4] 192.168.35.1 () {42 vars in 731 bytes} [Wed Jul 18 21:39:31 2018] GET / => generated 13283 bytes in 52 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
